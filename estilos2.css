@@ -1,0 +1,321 @@
+
+*{  
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-image: url(imag/Fondo.jpeg);
+
+/* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+
+    background-position: center center;
+
+/* Para que la imagen de fondo no se repita */
+
+    background-repeat: no-repeat;
+
+/* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+
+    background-attachment: fixed;
+
+/* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+
+    background-size: cover;
+
+/* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
+
+    background-color: #669996;
+
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat (3, 1fr);
+    grid-template-rows: repeat (3, auto); 
+
+    grid-template-areas: "menu menu menu"
+                        "foto presen presen"
+                        "foto exp exp"
+                        "metas metas metas"
+                        "contac contac contac";
+    
+}
+
+#menu_navegacion{
+    display: flex;
+    justify-content: space-between;
+    grid-area: menu;
+
+}
+
+
+
+.container > div,
+.container .menu,
+.container .presen,
+.container .exp
+{
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+.container .menu{
+    background-color: #12203e;
+
+    color: #fff;
+    grid-area: menu;
+
+    background: linear-gradient(to bottom, #274586 , #12203e);
+    animation-name: cambiar-color;
+    animation-duration: 4s;
+}
+
+/**/
+@keyframes cambiar-color {
+    from{
+        width: 500px;
+        background-color: #274586;
+    }
+    to{
+        width: 96%;
+        background-color: #12203e;
+    }   
+}
+/**/
+
+.nave{
+    transition: all 0.5s ease;
+}
+
+a{
+    margin: 5px 5px 5px 5px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+a:hover{
+    padding: 5px 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 15px;
+}
+
+.container .foto{
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    grid-area: foto;
+    animation-name: parafotico;
+    animation-duration: 3s;
+}
+
+@keyframes parafotico {
+    0%{
+        transform: scaleX(5%);
+    }
+    10%{
+        transform: scaleY(0%) ;
+    }
+}
+
+.fotico{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;      
+}
+
+.presen{
+    grid-area: presen;
+}
+.exp{
+    grid-area: exp;
+}
+.container .presen,
+.container .exp{
+    color: #274586;
+    background-color: transparent;
+    /*background: #445caa ;*/
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: presen-exp;
+    animation-duration: 3s;
+}
+
+@keyframes presen-exp {
+    0%{
+        transform: scaleX(5%);
+    }
+    5%{
+        transform: scaleY(0%) ;
+    }
+}
+
+/*.container .presen >h3{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*/
+.container .metas{
+    
+    background: linear-gradient(to bottom,#152547, #274586, #2c75be);
+    color: #d8d0d0;
+    
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: met;
+    animation-duration: 3s;
+    
+}
+.metas{
+    grid-area: metas;
+}
+
+@keyframes met {
+    0%{
+        transform: scaleX(5%);
+    }
+    10%{
+        transform: scaleY(0%) ;
+    }
+}   
+
+.container .contac{
+    background: linear-gradient(to right , #12203e, #274586);
+    animation-name: met;
+    animation-duration: 3s;
+}
+.contac{
+    grid-area: contac;
+}
+.icono{
+    color: aliceblue;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container{
+        grid-template-areas: "menu menu menu"
+                            "foto foto foto"
+                            "presen presen presen"
+                            "exp exp exp"
+                            "metas metas metas"
+                            "contac contac contac";
+        
+    }  
+}
+
+@media screen and (max-width: 768px){
+    .container .menu{
+        background: linear-gradient(to bottom, #274586 , #12203e);
+        animation-name: cambiar-color;
+        animation-duration: 4s;
+    }
+    @keyframes cambiar-color {
+        from{
+            width: 80%;
+            background-color: #274586;
+        }
+        to{
+            width: 92.09%;
+            background-color: #12203e;
+        }   
+    }
+}
+
+#parrafos{
+    
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat (2, 1fr);
+    grid-template-rows: repeat (2, auto);
+    grid-template-areas: "parrafo parrafo1"
+                        "parrafo parrafo1"; 
+
+
+    animation-name: met;
+    animation-duration: 3s;
+}
+.parrafo, .parrafo1{
+    color: #faa43d;
+    margin: 5px;
+    padding: 10px;
+    border-style: groove;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    #parrafos{
+        grid-template-areas: "parrafo"
+                            "parrafo1";
+    }  
+}
+
+
+
+
+#parrafo_prueba{
+    color: transparent;
+    
+    margin: 10px 20px;
+}
+
+@media screen and (max-width: 768px){
+    #parrafo_prueba{
+        
+        animation-name: prueba_responsive;
+        animation-duration: 3s;
+        
+    }
+    @keyframes prueba_responsive {
+        0%{
+            transform: scalex(0px);
+        }
+        5%{
+            transform: scalex(10%) ;
+        }
+    }
+}
+
+
+
+.cambia_color{
+    color: #A25668;
+    transition-duration: 7s;
+}
+
+#boton{
+    background-color: transparent;
+    border: transparent;
+    color: #975564;
+    cursor: pointer;
+}
+
+#info{
+    color: white;  
+}
+
+.boton_inicio{
+    margin: 20px 0 20px 0;
+    cursor: pointer;
+    width: 97px;
+}
